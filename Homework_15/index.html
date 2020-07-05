@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./style.css" />
+    <!-- <script src="./gallery.js" async></script> -->
+    <script src="./script2.js" async></script>
+
+    <title>Gallery</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="albumList" class="album-list"></div>
+        <div id="photoList" class="photo-list"></div>
+    </div>
+
+    <script type="template" id="albumItemTemplate">
+            <div class="album-item" data-album-id="{{id}}">{{albumName}}</div>
+        </script>
+    <script type="img/template" id="photosItemTemplate">
+            <div class="photo-item" data-task-id="{{id}}">
+                {{img}}
+                </div>
+        </script>
+</body>
+
+</html>

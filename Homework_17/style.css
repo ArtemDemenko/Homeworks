@@ -1,0 +1,18 @@
+#stickerContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.delete-btn{
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+#sticker-item{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+

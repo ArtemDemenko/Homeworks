@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" async></script>
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <div id="addStickerBtn">
+        <input type="submit" value="Tap to ADD Sticker">
+    </div>
+
+    <div id="stickerContainer">
+        
+        
+    </div>
+
+    <script type= "text/template" id="stickerItemTemplate">
+        <div id="sticker-item" data-sticker-id="{{id}}">
+            <h3> Sticker {{number}}</h3> <input type="button" class = "delete-btn" value="✘" >
+            <textarea class="edit-note-control" name="description" id="" cols="20" rows="5">{{description}}</textarea>
+        </div>
+    </script>
+</body>
+
+</html>

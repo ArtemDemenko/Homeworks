@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="GET" id="allData">
+    <input type="number" id="firstValue" value="" required></input>
+    <select id="action" required>
+        <option value="null" checked>Выберите действие</option>
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="number" id="secondValue" value="" required></input>
+    <input type="button" id="equal" value="Рассчитать" onclick="calculate()"></input>
+</form>
+<ul id="results"></ul>
+   
+
+</body>
+<script src="script.js"></script>
+</html>

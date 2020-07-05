@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" async></script>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="task" />
+        <button id="addTaskBtn">Add</button>
+    </div>
+    <table id="list">
+        
+    </table>
+
+    <script type="text/template" id="template">
+        <tr>
+            <td class="inputed">{{taskInputed}}</td>
+            <td><button id="doneRemoveBtn">Сделано</button></td>
+        </tr>
+    </script>
+
+</body>
+</html>
