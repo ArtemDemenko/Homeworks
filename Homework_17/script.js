@@ -1,18 +1,21 @@
 'use strict'
 const URL = 'https://5dd3d5ba8b5e080014dc4bfa.mockapi.io/stickers';
 const DELETE_BTN_CLASS = 'delete-btn';
-const EDIT_NOTE_CONTROL_CLASS = 'edit-note-control';
+const TEXT_INPUT_CLASS = 'text-input'
+
+
 
 const addBtn = document.getElementById('addStickerBtn');
-const stickerList = document.getElementById('stickerContainer');
+const stickerArea = document.getElementById('stickerContainer');
 const stickerItemTemplate = document.getElementById('stickerItemTemplate').innerHTML;
 const stickerEl = document.getElementById('sticker-item');
 
-let notesList = [];
+let textInputList = [];
+
 
 addBtn.addEventListener('click', onAddStickerBtnClick);
-stickerList.addEventListener('click', onDeleteBtnClick)
-stickerList.addEventListener('focusout', onStickerContainerFocusout);
+stickerArea.addEventListener('click', onDeleteBtnClick)
+stickerArea.addEventListener('focusout', onStickerContainerFocusout);
 
 getData();
 
@@ -23,8 +26,8 @@ function getData() {
 }
 
 function setData(data) {
-    notesList = data;
-    renderData(notesList);
+    textInputList = data;
+    renderData(textInputList);
 }
 
 function renderData(data) {
@@ -48,7 +51,7 @@ function postSticker() {
     })
         .then((res) => res.json())
         .then((data) => {
-            notesList.push(data);
+            textInputList.push(data);
             addSticker(data)
         });
         
@@ -61,7 +64,7 @@ function addSticker(sticker) {
         .replace('{{description}}', sticker.description)
 
     const newStickerEl = htmlToElement(html);
-    stickerList.appendChild(newStickerEl);
+    stickerArea.appendChild(newStickerEl);
 }
 
 function htmlToElement(html) {
@@ -99,8 +102,8 @@ function onStickerContainerFocusout(e) {
     const element = e.target;
 
     switch (true) {
-        case e.target.classList.contains(EDIT_NOTE_CONTROL_CLASS):
-            updateNote(
+        case e.target.classList.contains(TEXT_INPUT_CLASS):
+            stickerTextInput(
                 element.parentElement.dataset.stickerId,
                 element.name,
                 element.value
@@ -109,8 +112,8 @@ function onStickerContainerFocusout(e) {
     }
 }
 
-function updateNote(id, name, value) {
-    const note = notesList.find((el) => el.id == id);
+function stickerTextInput(id, name, value) {
+    const note = textInputList.find((el) => el.id == id);
 
     note[name] = value;
 
